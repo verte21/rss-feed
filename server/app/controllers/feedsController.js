@@ -1,8 +1,8 @@
 import feedSchema from '../db/models/FeedModel.js';
 
-class FeedControler {
+class FeedController {
   listFeeds(req, res) {
-    res.json({
+    res.status(200).json({
       hello: 'Hello world',
     });
   }
@@ -27,10 +27,9 @@ class FeedControler {
     });
     try {
       await feed.save();
-
-      console.log('succes');
+      res.status(201);
     } catch (err) {
-      console.error(err);
+      res.status(422).json({ message: err.message });
     }
   }
 
@@ -60,4 +59,4 @@ class FeedControler {
   }
 }
 
-export default new FeedControler();
+export default new FeedController();

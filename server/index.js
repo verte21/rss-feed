@@ -11,9 +11,7 @@ import './app/db/mongoose.js';
 
 // routers
 import feedRouter from './app/routes/api/FeedRouter.js';
-
-// models
-import FeedModel from './app/db/models/FeedModel.js';
+import userRouter from './app/routes/api/UserRouter.js';
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
@@ -21,6 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 // routes
 
 app.use('/api/feeds', feedRouter);
+app.use('/api/user', userRouter);
 
 app.get('*', (req, res) => {
   res.json({
@@ -29,5 +28,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(config.port, (req, res) => {
-  console.log('Listening');
+  console.log('Listening on ' + config.port);
 });

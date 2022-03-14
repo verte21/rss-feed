@@ -1,15 +1,15 @@
 import express from 'express';
 const router = new express.Router();
-import feedControler from '../../controllers/feedsControler.js';
+import feedController from '../../controllers/feedsController.js';
 
-router.get('/', feedControler.listFeeds);
+router.get('/', feedController.listFeeds);
 
-router.get('/show', feedControler.showFeed);
+router.get('/show', feedController.showFeed);
 
-router.post('/add', feedControler.addFeed);
+router.post('/add', feedController.addFeed);
 
-router.patch('/update', feedControler.updateFeed);
+router.patch('/update', feedController.updateFeed);
 
-router.delete('/delete', feedControler.deleteFeed);
+router.delete('/delete', feedController.deleteFeed);
 
 export default router;
