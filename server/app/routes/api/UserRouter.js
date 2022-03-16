@@ -10,6 +10,6 @@ router.post('/register', userController.registerUser);
 
 router.delete('/delete', userController.deleteUser);
 
-router.get('/edit', userController.updateUser);
+router.patch('/edit', userController.updateUser);
 
 export default router;

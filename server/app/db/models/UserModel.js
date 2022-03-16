@@ -26,6 +26,7 @@ const UserSchema = new Schema(
     },
     password: String,
     salt: String,
+    token: String,
     feeds: [{ type: Schema.Types.ObjectId, ref: 'feed' }],
   },
   { timestamps: true }
@@ -44,8 +45,8 @@ UserSchema.methods.setPass = async function (password) {
     .toString();
 };
 
-UserSchema.methods.validPass = function (password) {
-  const hash = cryptoJs.PBKDF2(password, this.salt, {
+UserSchema.methods.validPass = async function (password) {
+  const hash = await cryptoJs.PBKDF2(password, this.salt, {
     keySize: 128 / 32,
     iterations: 1000,
   });

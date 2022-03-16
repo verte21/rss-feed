@@ -8,7 +8,7 @@ router.get('/show', feedController.showFeed);
 
 router.post('/add', feedController.addFeed);
 
-router.patch('/update', feedController.updateFeed);
+router.put('/update', feedController.updateFeed);
 
 router.delete('/delete', feedController.deleteFeed);
 
