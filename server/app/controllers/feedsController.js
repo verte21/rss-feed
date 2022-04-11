@@ -3,10 +3,8 @@ import feedSchema from '../db/models/FeedModel.js';
 class FeedController {
   async listFeeds(req, res) {
     const feedsList = await feedSchema.find({}, 'link').exec();
-    // -_id without id value
-    console.log(feedsList);
 
-    res.status(200).json({});
+    res.status(200).json({ feedsList });
   }
 
   async showFeed(req, res) {

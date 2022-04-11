@@ -37,6 +37,7 @@ class UserController {
         });
 
         user.token = token;
+        user.save();
         res.status(200).json(token);
       } else {
         res.status(400);
@@ -65,8 +66,6 @@ class UserController {
     const { _id, newUserName, newPassword, newEmail } = req.body;
     const query = { _id: _id };
     let user;
-
-    console.log(newUserName);
 
     if (newUserName) {
       userSchema.findOneAndUpdate(
