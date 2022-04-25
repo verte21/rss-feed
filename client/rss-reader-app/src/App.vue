@@ -4,12 +4,8 @@
 
 import './index.css';
 import NavBar from './components/NavBar.vue';
-import Footer from './components/Footer.vue';
-import RssFeed from './components/Home.vue';
 import FeedsMainPage from './components/Feeds/FeedsMainPage.vue';
-import FeedsList from './components/Feeds/FeedsList.vue';
-import Home from './components/Home.vue';
-import FeedPrevievMenu from './components/Feeds/FeedPrevievMenu.vue';
+import TodoMainPage from './components/TodoList/TodoMainPage.vue';
 </script>
 
 <template>
@@ -19,6 +15,7 @@ import FeedPrevievMenu from './components/Feeds/FeedPrevievMenu.vue';
     </header>
 
     <section class="flex-1 h-screen w-100">
+      <!-- <TodoMainPage /> -->
       <FeedsMainPage />
     </section>
   </main>

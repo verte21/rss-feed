@@ -4,7 +4,7 @@ class FeedController {
   async listFeeds(req, res) {
     const feedsList = await feedSchema.find({}, 'link').exec();
 
-    res.status(200).json({ feedsList });
+    res.status(200).json(feedsList);
   }
 
   async showFeed(req, res) {

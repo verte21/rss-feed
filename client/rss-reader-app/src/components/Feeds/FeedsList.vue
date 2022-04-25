@@ -1,33 +1,27 @@
 <template>
-  <div class="menu bg-neutral border border-primary overflow-x-hidden">
+  <div
+    class="menu bg-neutral border border-primary overflow-x-hidden max-w-fit"
+  >
     <ul class="flex-none">
       <li
-        v-for="feed of feeds"
+        v-for="feed of store.getFeedingSites"
         class="shrink-0 hover:text-accent"
         :key="feed._id"
       >
-        <p class="w-auto">{{ feed.link }}</p>
+        <p class="w-auto" @click="showPreviews">{{ feed.link }}</p>
       </li>
     </ul>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return { feeds: [] };
-  },
-  mounted() {
-    this.axios
-      .get('/feeds')
-      .then((result) => {
-        this.feeds = result.data.feedsList;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  },
-};
+<script setup>
+import { ref, onMounted, computed, toRefs } from 'vue';
+import { useFeedingSitesStore } from '../../store/feedingSitesStore';
+
+const store = useFeedingSitesStore();
+onMounted(() => {
+  store.fetchFeedingSites();
+});
 </script>
 
 <style scoped>

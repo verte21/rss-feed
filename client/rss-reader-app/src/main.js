@@ -1,13 +1,10 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import axios from 'axios';
+import { createPinia } from 'pinia';
 
 const app = createApp(App);
 
-const axiosInstance = axios.create({
-  baseURL: 'http://localhost:4000/api',
-});
-
-app.config.globalProperties.axios = axiosInstance;
+app.use(createPinia());
 
 app.mount('#app');
