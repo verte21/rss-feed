@@ -1,14 +1,13 @@
 <template>
-  <div
-    class="menu bg-neutral border border-primary overflow-x-hidden max-w-fit"
-  >
-    <ul class="flex-none">
+  <div class="menu bg-neutral border border-primary">
+    <ul>
       <li
         v-for="feed of store.getFeedingSites"
-        class="shrink-0 hover:text-accent"
+        class="shrink-0 hover:text-accent m-2 p-2 overflow-x-hidden cursor-pointer"
         :key="feed._id"
+        @click="showPreviews"
       >
-        <p class="w-auto" @click="showPreviews">{{ feed.link }}</p>
+        {{ feed.link }}
       </li>
     </ul>
   </div>

@@ -10,11 +10,11 @@
 </template>
 
 <script>
-//import { useFeedsPreview } from '../../store/feedsPreviewStore';
+// import { useFeedsPreviewStore } from '../../store/feedsPreviewStore.js';
 import CardFeed from './CardFeed.vue';
 export default { components: { CardFeed } };
 
-//const store = useFeedsPreview();
+// const store = useFeedsPreview();
 // onMounted(() => {
 //   store.fetchFeeds('https://zaufanatrzeciastrona.pl/feed/');
 // });

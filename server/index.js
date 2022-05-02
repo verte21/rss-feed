@@ -19,7 +19,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 // routes
-app.use('/api/feeds', verifyToken, feedRouter);
+app.use('/api/feeds', feedRouter);
 app.use('/api/user', userRouter);
 app.use('/api/todo', todoRouter);
 

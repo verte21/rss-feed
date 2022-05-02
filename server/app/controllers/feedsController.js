@@ -1,9 +1,10 @@
 import feedSchema from '../db/models/FeedModel.js';
+import Parser from 'rss-parser';
+const parser = new Parser();
 
 class FeedController {
   async listFeeds(req, res) {
     const feedsList = await feedSchema.find({}, 'link').exec();
-
     res.status(200).json(feedsList);
   }
 
@@ -53,8 +54,22 @@ class FeedController {
     const feedId = req.body.feedId;
     try {
       await feedSchema.deleteOne({ _id: feedId });
+      res.status(200);
     } catch (err) {
       console.error(err);
+    }
+  }
+
+  async parseFeed(req, res) {
+    const feedLink = req.body.feedLink;
+    let feeds = [];
+    try {
+      (async () => {
+        feeds = await parser.parseURL(feedLink);
+        res.json(feeds);
+      })();
+    } catch (e) {
+      res.status(404).send('Cant parse that feed :/');
     }
   }
 }
