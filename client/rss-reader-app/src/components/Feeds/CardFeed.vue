@@ -1,17 +1,23 @@
 <template>
-  <div class="card card-compact bg-slate-500 p-1 m-2 w-86 shadow-xl">
+  <div
+    class="card hover:text-accent cursor-pointer card-compact max-w-xs bg-slate-500 p-1 m-2 w-86 shadow-xl"
+  >
     <!-- <figure class="rounded-md">
       <img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" />
     </figure> -->
     <div class="card-body">
-      <h2 class="card-title">Shoes!</h2>
-      <p>If a dog chews shoes whose shoes does he choose?</p>
+      <h4 class="card-title text-sm">{{ title }}</h4>
+      <p class="overflow-x-hidden text-sm">{{ description }}</p>
     </div>
   </div>
 </template>
 
-<script>
-export default {};
+<script setup>
+defineProps(['title', 'description']);
 </script>
 
-<style></style>
+<style scoped>
+.effect {
+  color: red;
+}
+</style>

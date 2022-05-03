@@ -17,6 +17,7 @@ import todoRouter from './app/routes/api/TodoRouter.js';
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // routes
 app.use('/api/feeds', feedRouter);

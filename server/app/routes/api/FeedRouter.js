@@ -12,6 +12,6 @@ router.put('/update', feedController.updateFeed);
 
 router.delete('/delete', feedController.deleteFeed);
 
-router.get('/parseFeed', feedController.parseFeed);
+router.post('/parseFeed', feedController.parseFeed);
 
 export default router;

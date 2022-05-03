@@ -66,7 +66,8 @@ class FeedController {
     try {
       (async () => {
         feeds = await parser.parseURL(feedLink);
-        res.json(feeds);
+
+        res.json({ feeds });
       })();
     } catch (e) {
       res.status(404).send('Cant parse that feed :/');
