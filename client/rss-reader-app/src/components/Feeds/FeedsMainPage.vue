@@ -10,8 +10,9 @@ const store = useFeedsPreviewStore();
 
 <template>
   <div class="flex h-screen w-100">
-    <FeedsList class="overflow-y-auto" />
-    <FeedPrevievMenu class="overflow-y-auto" />
+    <FeedsList />
+
+    <FeedPrevievMenu v-if="store.selectedFeedSite != null" />
 
     <StarterPage v-if="store.getSelectedFeed == null" />
     <ContentPage v-else :content="store.getSelectedFeed" />

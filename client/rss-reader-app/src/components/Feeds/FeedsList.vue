@@ -1,5 +1,5 @@
 <template>
-  <div class="menu bg-neutral border border-primary max-w-fit">
+  <div class="menu bg-neutral border border-primary max-w-fit overflow-y-auto">
     <ul>
       <li
         v-for="feed of store.getFeedingSites"

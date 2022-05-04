@@ -16,8 +16,4 @@
 defineProps(['title', 'description']);
 </script>
 
-<style scoped>
-.effect {
-  color: red;
-}
-</style>
+<style scoped></style>

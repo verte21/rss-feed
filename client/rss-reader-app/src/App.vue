@@ -1,23 +1,26 @@
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-
 import './index.css';
 import NavBar from './components/NavBar.vue';
 import FeedsMainPage from './components/Feeds/FeedsMainPage.vue';
 import TodoMainPage from './components/TodoList/TodoMainPage.vue';
+import LoginForm from './components/Forms/LoginForm.vue';
+import RegisterForm from './components/Forms/RegisterForm.vue';
 </script>
 
 <template>
   <main class="flex">
-    <header>
-      <NavBar />
-    </header>
+    <!-- <LoginForm /> -->
+    <RegisterForm />
 
-    <section class="flex-1 h-screen w-100">
-      <!-- <TodoMainPage /> -->
-      <FeedsMainPage />
-    </section>
+    <!-- after login  -->
+    <!-- <header> -->
+    <!-- <NavBar /> -->
+    <!-- </header> -->
+    <!-- <section class="flex-1 h-screen w-100"> -->
+    <!-- here will be diff routes -->
+    <!-- <TodoMainPage /> -->
+    <!-- <FeedsMainPage /> -->
+    <!-- </section> -->
   </main>
 </template>
 
